@@ -1,0 +1,19 @@
+from math import floor
+def minmax(T,s,u):
+    
+    if u-s==0:
+        print(s,u,T,"final")
+        return T[s-1]
+    c=floor((s+u)/2)
+    for j in range(s,c):
+        print("s:",s,"u:",u,"c:",c,"j:",j,T[j]>T[c+j-s])
+        if T[j]>T[c+j-s]: 
+                print("T[j],T[c+j-s]",T[j],T[c+j-s])
+                T[j+c-s],T[j]=T[j],T[j+c-s]
+                print("T",T)
+    
+    minmax(T, s, c)
+    minmax(T, c+1, u)
+    
+T=[1,2,5,3,1,9,10]
+r=minmax(T,0,len(T))   
