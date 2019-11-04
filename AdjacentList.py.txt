@@ -1,0 +1,16 @@
+Adjacent_List=[]
+def Adj(): 
+    user_input_temp=input("Enter adjacent vertices of a vertex:")
+    while True:
+            if user_input_temp=="q": # if user enters q the input process is terminated
+                    return(Adjacent_List) #And the final list is returned
+            adjacent_vertices=list(map(int,user_input_temp.split())) #A sublist is created
+            try:
+                            Adjacent_List.append(adjacent_vertices) #sublist is added in final list
+                            return(Adj()) # to continue the user input process 
+            except ValueError: #if a string or something else is inserted
+                            print("No strings accepted, please enter a number")
+                            return(Adj()) #User is prompted to input again
+
+
+print(Adj())
