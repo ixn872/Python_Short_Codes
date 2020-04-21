@@ -1,3 +1,3 @@
-#Bogo sort
-#Find min max
-#Find adjacent list
+* Bogo Sort
+* Min Max
+* Adjacent List
